@@ -1,0 +1,62 @@
+[
+ {
+  "business": "Holor Medical Centre",
+  "city": "Toronto / GTA",
+  "industry": "Dental or medical clinic",
+  "status": "review",
+  "v": 2,
+  "voice": "sara",
+  "file": "audio/holor-medical-centre.mp3",
+  "listen": null
+ },
+ {
+  "business": "Regal Migration Services",
+  "city": "Melbourne",
+  "industry": "Legal or immigration",
+  "status": "review",
+  "v": 2,
+  "voice": "sara",
+  "file": "audio/regal-migration-services.mp3",
+  "listen": null
+ },
+ {
+  "business": "DjPj",
+  "city": "Toronto / GTA",
+  "industry": "Events or promoter",
+  "status": "review",
+  "v": 1,
+  "voice": "kian",
+  "file": "audio/djpj.mp3",
+  "listen": null
+ },
+ {
+  "business": "Parsvisa",
+  "city": "Toronto / GTA",
+  "industry": "Other",
+  "status": "review",
+  "v": 2,
+  "voice": "sara",
+  "file": "audio/parsvisa.mp3",
+  "listen": null
+ },
+ {
+  "business": "Sunnyside grill",
+  "city": "Canada",
+  "industry": "Restaurant or food",
+  "status": "review",
+  "v": 2,
+  "voice": "sara",
+  "file": "audio/sunnyside-grill.mp3",
+  "listen": null
+ },
+ {
+  "business": "Elevate biz ai",
+  "city": "Vancouver / Lower Mainland",
+  "industry": "Other",
+  "status": "delivered",
+  "v": 1,
+  "voice": "sara",
+  "file": "audio/elevate-biz-ai.mp3",
+  "listen": "https://listen.rjappads.com/elevate-biz-ai-6/"
+ }
+]
