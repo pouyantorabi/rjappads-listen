@@ -144,8 +144,8 @@ footer .fa-line{font-size:18px;margin:6px 0 10px}
     <label>Business<input type="text" id="business" value="Holor Medical Centre" readonly></label>
     <label>Email<input type="email" id="email" placeholder="you@business.com" autocomplete="email" required></label>
     <div><div style="font-size:14px;color:var(--mute);margin-bottom:8px">Cities</div>
-      <div class="chips" id="cities"><button type="button">Toronto</button><button type="button">Los Angeles</button><button type="button">Vancouver</button><button type="button">Washington</button><button type="button">Dubai</button><button type="button">London</button><button type="button" class="other" id="otherbtn">+ other</button></div>
-      <input type="text" id="cities_other" placeholder="Which city?" style="display:none;margin-top:10px">
+      <div class="chips" id="cities"><button type="button">Toronto</button><button type="button">Los Angeles</button><button type="button">Vancouver</button><button type="button">Washington</button><button type="button">Dubai</button><button type="button">London</button></div>
+      <input type="text" id="cities_other" placeholder="Another city? Type it — e.g. Arlington, Montreal" style="margin-top:10px" autocomplete="address-level2">
     </div>
     <div class="row"><label>Monthly budget<input type="text" id="budget" placeholder="You suggest"></label><label>Start date<input type="text" id="start" placeholder="As soon as possible"></label></div>
     <label>A note for Payam<textarea id="note" rows="3" placeholder="Anything we should know"></textarea></label>
@@ -188,8 +188,8 @@ function post(kind,fields,btn,errEl,onOk){
   au.addEventListener('pause',stop);au.addEventListener('ended',function(){stop();au.currentTime=0;paint()});
   pl.addEventListener('click',function(){au.paused?au.play():au.pause()});
   var cities=[],chips=document.getElementById('cities'),oth=document.getElementById('cities_other');
-  chips.addEventListener('click',function(e){var t=e.target;if(t.tagName!=='BUTTON')return;if(t.id==='otherbtn'){t.classList.toggle('on');oth.style.display=t.classList.contains('on')?'block':'none';if(oth.style.display==='block')oth.focus();return}
-    t.classList.toggle('on');cities=[].map.call(chips.querySelectorAll('button.on:not(#otherbtn)'),function(x){return x.textContent})});
+  function readChips(){cities=[].map.call(chips.querySelectorAll('button.on'),function(x){return x.textContent})}
+  chips.addEventListener('click',function(e){var t=e.target;if(t.tagName!=='BUTTON')return;t.classList.toggle('on');readChips()});readChips();
   document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
     var f={business:document.getElementById('business').value,email:document.getElementById('email').value.trim(),cities:cities,cities_other:oth.value.trim(),budget:document.getElementById('budget').value.trim(),start:document.getElementById('start').value.trim(),note:document.getElementById('note').value.trim(),consent:document.getElementById('consent').checked,slug:'holor-medical-centre-1',tag:'FA-1'};
     if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(f.email)){var er=document.getElementById('err');er.textContent='Please check the email address.';er.style.display='block';return}
